@@ -53,5 +53,12 @@ namespace ShoeStore.Controls
             LoadDanhSach();
             return status.Success;
         }
+        public string Xoa(int index)
+        {
+            str = "update CHITIETNHAPKHO set status=0 where idChiTietPNK = '" + chiTietNhapKho_tb.Rows[index]["idChiTietPNK"].ToString() + "'";
+            database.ExecuteNonQuery(str);
+            LoadDanhSach();
+            return status.Success;
+        }
     }
 }

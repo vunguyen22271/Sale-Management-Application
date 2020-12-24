@@ -17,7 +17,7 @@ namespace ShoeStore.Views
         private void frmHangGiay_Load(object sender, EventArgs e)
         {
             LoadListView();
-            this.btnXoa.Hide();
+            //this.btnXoa.Hide();
         }
         public void LoadListView()
         {

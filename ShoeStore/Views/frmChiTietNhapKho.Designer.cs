@@ -47,6 +47,7 @@
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBoxThongTinBoPhan.SuspendLayout();
             this.groupBoxThongTinChiTiet.SuspendLayout();
@@ -54,6 +55,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnThemChiTietNhapKho);
             this.groupBox1.Location = new System.Drawing.Point(18, 401);
             this.groupBox1.Name = "groupBox1";
@@ -198,6 +200,16 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Tên giày";
             // 
+            // btnXoa
+            // 
+            this.btnXoa.Location = new System.Drawing.Point(378, 39);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(80, 40);
+            this.btnXoa.TabIndex = 41;
+            this.btnXoa.Text = "Xoá";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // frmChiTietNhapKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,5 +251,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ColumnHeader colDGiay;
+        private System.Windows.Forms.Button btnXoa;
     }
 }

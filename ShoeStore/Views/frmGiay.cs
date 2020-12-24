@@ -131,7 +131,9 @@ namespace ShoeStore.Views
             string idLoaiGiay = (cbTenGiay.SelectedItem as ComboboxItem).Value.ToString();
             string mausac = cbMauSac.SelectedItem.ToString();
             string size = cbSize.SelectedItem.ToString();
-            if (giay.Them(idLoaiGiay, mausac, size) == status.Success)
+            string giaban = txtGiaBan.Text.Trim();
+            if(giaban == "") { giaban = "0"; }
+            if (giay.Them(idLoaiGiay, mausac, size, giaban) == status.Success)
             {
                 MessageBox.Show("Giày đã được thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadListView();

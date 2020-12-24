@@ -108,5 +108,33 @@ namespace ShoeStore.Views
                 }
             }
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (lv.SelectedIndices.Count > 0)
+            {
+                string str = "";
+                str = lv.Items[lv.SelectedIndices[0]].SubItems[1].Text;
+                if (MessageBox.Show("Bạn có chắc chắn là muốn xóa chi tiết phiếu nhập kho ’" + str + "’ không ?", "Hỏi lại", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int deleteIndex = lv.SelectedIndices[0];
+                    if (chiTietNhapKho.Xoa(deleteIndex) == status.Success)
+                    {
+                        MessageBox.Show("Chi tiết phiếu nhập kho đã được xoá thành công", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadListView();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xoá không thành công", "Lỗi",
+                           MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bạn phải chọn giày", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
     }
 }

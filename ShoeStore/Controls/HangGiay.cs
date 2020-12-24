@@ -59,7 +59,8 @@ namespace ShoeStore.Controls
             }
             else
             {
-                string str = "update HANGGIAY set tenHangGiay = N'" + ten + "' where status = 1 and idHangGiay = " + hangGiay_tb.Rows[index]["idHangGiay"].ToString();
+                string idHangGiay = hangGiay_tb.Rows[index]["idHangGiay"].ToString();
+                string str = "update HANGGIAY set tenHangGiay = N'" + ten + "' where status = 1 and idHangGiay = " + idHangGiay;
                 database.ExecuteNonQuery(str);
                 LoadDanhSach();
                 return status.Success;
@@ -75,8 +76,8 @@ namespace ShoeStore.Controls
         private string KiemTraTonTai(string ten)
         {
             str = "select * from HANGGIAY where status=1 and tenHangGiay=N'" + ten + "'";
-            this.hangGiay_tb = database.Execute(str);
-            if(hangGiay_tb.Rows.Count >= 1)
+            DataTable dt = database.Execute(str);
+            if(dt.Rows.Count >= 1)
             {
                 return status.Exist;
             }

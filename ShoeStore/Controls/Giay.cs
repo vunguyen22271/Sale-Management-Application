@@ -71,9 +71,9 @@ namespace ShoeStore.Controls
             LoadDanhSach(idLoaiGiay);
             return status.Success;
         }
-        public string Them(string idLoaiGiayThem, string mauSac, string size)
+        public string Them(string idLoaiGiayThem, string mauSac, string size, string giaban)
         {
-            string str = "insert into GIAY(idLoaiGiay, mauSac, size) values('" + idLoaiGiayThem + "', N'" + mauSac + "', '" + size + "')";
+            string str = "insert into GIAY(idLoaiGiay, mauSac, size, giaBan) values('" + idLoaiGiayThem + "', N'" + mauSac + "', '" + size + "', '" + giaban + "')";
             database.ExecuteNonQuery(str);
             LoadDanhSach(idLoaiGiay);
             return status.Success;

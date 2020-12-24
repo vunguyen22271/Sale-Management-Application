@@ -42,6 +42,7 @@
             this.colSTT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colTen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colSdt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colTongTien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox3.SuspendLayout();
             this.groupBoxThongTinChiTiet.SuspendLayout();
             this.groupBoxThongTinBoPhan.SuspendLayout();
@@ -148,7 +149,8 @@
             this.lv.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colSTT,
             this.colTen,
-            this.colSdt});
+            this.colSdt,
+            this.colTongTien});
             this.lv.HideSelection = false;
             this.lv.Location = new System.Drawing.Point(6, 19);
             this.lv.Name = "lv";
@@ -170,6 +172,10 @@
             // colSdt
             // 
             this.colSdt.Text = "SĐT";
+            // 
+            // colTongTien
+            // 
+            this.colTongTien.Text = "Tổng số tiền";
             // 
             // frmKhachHang
             // 
@@ -206,5 +212,6 @@
         private System.Windows.Forms.ColumnHeader colSTT;
         private System.Windows.Forms.ColumnHeader colTen;
         private System.Windows.Forms.ColumnHeader colSdt;
+        private System.Windows.Forms.ColumnHeader colTongTien;
     }
 }

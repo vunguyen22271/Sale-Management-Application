@@ -21,6 +21,8 @@ namespace ShoeStore.Views
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            txtUser.Text = "admin01";
+            txtPass.Text = "admin01";
             if (txtUser.Text != "" && txtPass.Text != "")
             {
                 user.Username = txtUser.Text.Trim();
