@@ -1,0 +1,76 @@
+update GIAY
+set giaBan = 2000000, soLuongGiay = 10
+where idLoaiGiay = 1
+update GIAY
+set giaBan = 1000000, soLuongGiay = 11
+where idLoaiGiay = 2
+use ShoeStore4
+Go
+-- Kiểm tra ràng buộc email--
+
+create trigger tg_kiemtraemail ON NHANVIEN
+For insert, update
+AS
+DECLARE @email varchar (50)
+SELECT @email = ne.email
+From inserted ne
+if (@email not like '%@%')
+BEGIN
+Print (N'Nhập sai email. 
+		Vui lòng nhập lại ')
+Rollback
+END
+
+--Kiểm tra tên giày nhập có bị trùng với giày cũ không--
+
+go
+CREATE TRIGGER tg_kiemtratenloaigiay ON LOAIGIAY
+for insert, update
+AS
+DECLARE @tenLoaiGiay varchar (50)
+SET @tenLoaiGiay = (SELECT ne.tenLoaiGiay from inserted ne)
+DECLARE @d int
+SET @d = (SELECT count(tenLoaiGiay) FROM LOAIGIAY WHERE tenLoaiGiay = @tenLoaiGiay)
+if (@d >1)
+BEGIN 
+print (N' sản phẩm đã tồn tại')
+rollback
+end
+
+-- Cập nhật Tổng giá tiền trong Đơn hàng khi thêm, sửa sản phẩm, sửa số lượng --
+
+create trigger tg_capnhatgiatienhoadon ON CHITIETHOADON
+for insert, update 
+as
+DECLARE @idHoaDon varchar(10), @idGiay varchar (10), @soLuong int, @donGia int, @thanhtienchitiet int, @tongtienhoadon int
+SELECT @idHoaDon = ne.idHoaDon, @idGiay = ne.idGiay, @soLuong = ne.soLuong, @donGia = ne.donGia, @thanhtienchitiet = ne.thanhTienChiTiet
+from inserted ne inner join GIAY giay On ne.idGiay = giay.idGiay
+update CHITIETHOADON
+set thanhTienChiTiet = @donGia * @soLuong
+where idHoaDon = @idHoaDon and idGiay = @idGiay
+SElect	@tongtienhoadon = SUM(thanhTienChiTiet), @soLuong = sum(soLuong)
+from CHITIETHOADON
+where idHoaDon = @idHoaDon
+update HOADON
+set TongTienHoaDon = @tongtienhoadon, soLuong = @soLuong
+where idHoaDon = @idHoaDon
+Go
+
+Cập nhật Tổng giá tiền trong Đơn hàng khi thêm, sửa, xóa sản phẩm
+
+create trigger tg_capnhatgiatien ON CHITIETHOADON
+for delete, update
+as
+declare @idhoadon varchar(10), @tongtienhoadon int, @soluong int
+SELECT @idhoadon = idHoaDon
+from deleted
+select @tongtienhoadon = SUM(thanhTienChiTiet), @soluong = SUM(soLuongchitiet)
+from CHITIETHOADON
+where idHoaDon = @idhoadon
+update HOADON
+Set TongTienHoaDon = @tongtienhoadon,soLuonghoadon = @soluong
+where idHoaDon = @idhoadon
+go
+
+
+
