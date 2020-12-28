@@ -1,0 +1,87 @@
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.csprojAssemblyReference.cache
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.Views.frmDangNhap.resources
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.Properties.Resources.resources
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.csproj.GenerateResource.cache
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.csproj.CoreCompileInputs.cache
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\bin\Debug\ShoeStore.exe.config
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\bin\Debug\ShoeStore.exe
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\bin\Debug\ShoeStore.pdb
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.exe
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.pdb
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.Views.frmMDI.resources
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.Views.frmHangGiay.resources
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.Views.frmNhaCungCap.resources
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.Views.frmDanhMuc.resources
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.Views.frmGiay.resources
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.Views.frmNhapKho.resources
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.Views.frmChiTietNhapKho.resources
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.Views.frmNhanVien.resources
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.Views.frmInHoaDon.resources
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.Views.frmKhachHang.resources
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.Views.frmHoaDon.resources
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.Views.frmChiTietHoaDon.resources
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\bin\Debug\Microsoft.SqlServer.Types.dll
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.Views.frmThongke.resources
+F:\Data\Nam3\CNPM\Đề án\ShoeStore\obj\Debug\ShoeStore.csproj.CopyComplete
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\bin\Debug\ShoeStore.exe.config
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\bin\Debug\ShoeStore.exe
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\bin\Debug\ShoeStore.pdb
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\bin\Debug\Microsoft.SqlServer.Types.dll
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.csprojAssemblyReference.cache
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.Views.frmChiTietHoaDon.resources
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.Views.frmChiTietNhapKho.resources
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.Views.frmDangNhap.resources
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.Properties.Resources.resources
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.Views.frmDanhMuc.resources
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.Views.frmGiay.resources
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.Views.frmHangGiay.resources
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.Views.frmHoaDon.resources
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.Views.frmInHoaDon.resources
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.Views.frmKhachHang.resources
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.Views.frmMDI.resources
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.Views.frmNhaCungCap.resources
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.Views.frmNhanVien.resources
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.Views.frmNhapKho.resources
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.Views.frmThongke.resources
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.csproj.GenerateResource.cache
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.csproj.CoreCompileInputs.cache
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.csproj.CopyComplete
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.exe
+F:\Data\Nam3\ShoeStore\CNPM_ShoeStore\ShoeStore\obj\Debug\ShoeStore.pdb
+E:\ShoeStore\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+E:\ShoeStore\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+E:\ShoeStore\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+E:\ShoeStore\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+E:\ShoeStore\bin\Debug\ShoeStore.exe.config
+E:\ShoeStore\bin\Debug\ShoeStore.exe
+E:\ShoeStore\bin\Debug\ShoeStore.pdb
+E:\ShoeStore\bin\Debug\Microsoft.SqlServer.Types.dll
+E:\ShoeStore\obj\Debug\ShoeStore.csprojAssemblyReference.cache
+E:\ShoeStore\obj\Debug\ShoeStore.Views.frmChiTietHoaDon.resources
+E:\ShoeStore\obj\Debug\ShoeStore.Views.frmChiTietNhapKho.resources
+E:\ShoeStore\obj\Debug\ShoeStore.Views.frmDangNhap.resources
+E:\ShoeStore\obj\Debug\ShoeStore.Properties.Resources.resources
+E:\ShoeStore\obj\Debug\ShoeStore.Views.frmDanhMuc.resources
+E:\ShoeStore\obj\Debug\ShoeStore.Views.frmGiay.resources
+E:\ShoeStore\obj\Debug\ShoeStore.Views.frmHangGiay.resources
+E:\ShoeStore\obj\Debug\ShoeStore.Views.frmHoaDon.resources
+E:\ShoeStore\obj\Debug\ShoeStore.Views.frmInHoaDon.resources
+E:\ShoeStore\obj\Debug\ShoeStore.Views.frmKhachHang.resources
+E:\ShoeStore\obj\Debug\ShoeStore.Views.frmMDI.resources
+E:\ShoeStore\obj\Debug\ShoeStore.Views.frmNhaCungCap.resources
+E:\ShoeStore\obj\Debug\ShoeStore.Views.frmNhanVien.resources
+E:\ShoeStore\obj\Debug\ShoeStore.Views.frmNhapKho.resources
+E:\ShoeStore\obj\Debug\ShoeStore.Views.frmThongke.resources
+E:\ShoeStore\obj\Debug\ShoeStore.csproj.GenerateResource.cache
+E:\ShoeStore\obj\Debug\ShoeStore.csproj.CoreCompileInputs.cache
+E:\ShoeStore\obj\Debug\ShoeStore.csproj.CopyComplete
+E:\ShoeStore\obj\Debug\ShoeStore.exe
+E:\ShoeStore\obj\Debug\ShoeStore.pdb
