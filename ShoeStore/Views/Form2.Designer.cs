@@ -1,7 +1,7 @@
 ﻿
 namespace ShoeStore.Views
 {
-    partial class Form1
+    partial class Form2
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace ShoeStore.Views
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.Text = "Form2";
         }
 
         #endregion
