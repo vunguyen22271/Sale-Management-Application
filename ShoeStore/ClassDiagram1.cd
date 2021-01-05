@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ShoeStore.Controls.ChiTietHoaDon">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAAAAAAABAAAgAAAQAAABEBCAAAAAAAAAIAAA=</HashCode>
+      <FileName>Controls\ChiTietHoaDon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShoeStore.Controls.ChiTietNhapKho">
+    <Position X="24.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAACAEAAAAAABgAEAAAABCAAAAgSAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controls\ChiTietNhapKho.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShoeStore.Controls.ComboboxItem">
+    <Position X="22.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAgCAAAAAA=</HashCode>
+      <FileName>Controls\ComboboxItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShoeStore.Controls.DanhMuc">
+    <Position X="20.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAcAACAEAAAAAABgAAAAAAAAAQAAgCAAAAAAAAACAAA=</HashCode>
+      <FileName>Controls\DanhMuc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShoeStore.Controls.Giay">
+    <Position X="18.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAcAACAEAAAAAABgAAAAAAAAAQAAASAAAAEAAAACAAA=</HashCode>
+      <FileName>Controls\Giay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShoeStore.Controls.HangGiay">
+    <Position X="16.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAcAACAAAAAAAABgAAAAAAAAAQAAgCAQAAAAAAACAAA=</HashCode>
+      <FileName>Controls\HangGiay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShoeStore.Controls.HoaDon">
+    <Position X="15" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAACAAAAEAACBAAQAAAAAAEAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\HoaDon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShoeStore.Controls.KhachHang">
+    <Position X="13.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAACAAAAAAAARgAAAAAAAAAAAAACQAAAAAAAAQAAA=</HashCode>
+      <FileName>Controls\KhachHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShoeStore.Controls.NhaCungCap">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAUAACAAAAAAAABgAAAAAACAAQAAgCAAAAAAAACAAAA=</HashCode>
+      <FileName>Controls\NhaCungCap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShoeStore.Controls.NhanVien">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAACAAAAIAAABiAAAAAAAAAAAAgCAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\NhanVien.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShoeStore.Controls.NhapKho">
+    <Position X="5.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAACAAAAIAAAJiAAAKAAAACAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\NhapKho.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShoeStore.Controls.Status">
+    <Position X="7.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAoAAEAKAARAAAAEAAAA=</HashCode>
+      <FileName>Controls\Status.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShoeStore.Controls.ThongKe">
+    <Position X="9.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAABAAAAAAAAAABAABCAAAAQAAAAAAAA=</HashCode>
+      <FileName>Controls\ThongKe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShoeStore.Controls.User">
+    <Position X="11.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAASAAgAAwAAAAUAAAAEAAACAAAQAgAAAAA=</HashCode>
+      <FileName>Controls\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
