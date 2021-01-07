@@ -10,13 +10,13 @@ namespace ShoeStore.Controls
 {
     class ChiTietNhapKho
     {
-        Status status = new Status();
-        Database database = new Database();
-        DataTable giay_tb;
-        DataTable chiTietNhapKho_tb;
-        DataTable danhMuc_tb;
-        string str;
-        string idNhapKho;
+        private Status status = new Status();
+        private Database database = new Database();
+        private DataTable giay_tb;
+        private DataTable chiTietNhapKho_tb;
+        private DataTable danhMuc_tb;
+        private string str;
+        private string idNhapKho;
         public DataTable Giay_tb { get => giay_tb; }
         public DataTable ChiTietNhapKho_tb { get => chiTietNhapKho_tb; }
         public DataTable DanhMuc_tb { get => danhMuc_tb; }

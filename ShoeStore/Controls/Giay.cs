@@ -10,18 +10,19 @@ namespace ShoeStore.Controls
 {
     class Giay
     {
-        Status status = new Status();
-        Database database = new Database();
-        DataTable danhMuc_tb;
-        DataTable hangGiay_tb;
+        private Status status = new Status();
+        private Database database = new Database();
+        private DataTable danhMuc_tb;
+        private DataTable hangGiay_tb;
 
-        DataTable giay_tb;
-        string str;
-        string idLoaiGiay = "0";
+        private DataTable giay_tb;
+        private string str;
+        private string idLoaiGiay = "0";
 
         public DataTable DanhMuc_tb { get => danhMuc_tb; }
         public DataTable HangGiay_tb { get => hangGiay_tb; }
         public DataTable Giay_tb { get => giay_tb; }
+
         public Giay()
         {
             LoadDanhSach(idLoaiGiay);

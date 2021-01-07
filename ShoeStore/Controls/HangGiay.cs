@@ -10,10 +10,10 @@ namespace ShoeStore.Controls
 {
     class HangGiay
     {
-        Status status = new Status();
-        Database database = new Database();
-        DataTable hangGiay_tb;
-        string str;
+        private Status status = new Status();
+        private Database database = new Database();
+        private DataTable hangGiay_tb;
+        private string str;
         public DataTable HangGiay_tb { get => hangGiay_tb; }
 
         public HangGiay()

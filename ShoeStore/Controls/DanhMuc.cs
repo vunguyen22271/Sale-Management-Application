@@ -10,11 +10,11 @@ namespace ShoeStore.Controls
 {
     class DanhMuc
     {
-        Status status = new Status();
-        Database database = new Database();
-        DataTable hangGiay_tb;
-        DataTable danhMuc_tb;
-        string str;
+        private Status status = new Status();
+        private Database database = new Database();
+        private DataTable hangGiay_tb;
+        private DataTable danhMuc_tb;
+        private string str;
         public DataTable DanhMuc_tb { get => danhMuc_tb; }
         public DataTable HangGiay_tb { get => hangGiay_tb; }
 

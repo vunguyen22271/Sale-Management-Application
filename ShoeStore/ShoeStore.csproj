@@ -204,7 +204,7 @@
     <EmbeddedResource Include="Views\frmThongke.resx">
       <DependentUpon>frmThongke.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram1 - Copy.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

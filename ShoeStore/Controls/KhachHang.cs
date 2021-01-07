@@ -10,10 +10,10 @@ namespace ShoeStore.Controls
 {
     class KhachHang
     {
-        Status status = new Status();
-        Database database = new Database();
-        DataTable khachHang_tb;
-        string str;
+        private Status status = new Status();
+        private Database database = new Database();
+        private DataTable khachHang_tb;
+        private string str;
 
         public DataTable KhachHang_tb { get => khachHang_tb; }
 
@@ -34,6 +34,7 @@ namespace ShoeStore.Controls
             LoadDanhSach();
             return status.Success;
         }
+        /// <summary></summary>
         public string CapNhat(int index, string ten, string sdt)
         {
             string str = "update KHACHHANG set tenKH=N'" + ten + "', sdt='" + sdt + "' " +

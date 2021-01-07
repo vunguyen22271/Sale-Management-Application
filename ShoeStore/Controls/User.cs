@@ -10,7 +10,10 @@ namespace ShoeStore.Controls
 {
     public class User
     {
-        Database db = new Database();
+        private Status status = new Status();
+        private Database database = new Database();
+        private DataTable user_tb;
+        private string str;
         private string idUser;
         private string username;
         private string password;
@@ -23,10 +26,13 @@ namespace ShoeStore.Controls
         public string PhanQuyen { get => phanQuyen; set => phanQuyen = value; }
         public string IdUser { get => idUser; set => idUser = value; }
 
-        public User() { }
+        public User() 
+        { 
+
+        }
         public bool Login()
         {
-            DataTable dt = this.db.Execute("select * from NHANVIEN where username='" + this.username+ "' and password ='" + this.password + "'");
+            DataTable dt = this.database.Execute("select * from NHANVIEN where username='" + this.username+ "' and password ='" + this.password + "'");
             if(dt.Rows.Count >= 1)
             {
                 this.idUser = dt.Rows[0]["idNV"].ToString();

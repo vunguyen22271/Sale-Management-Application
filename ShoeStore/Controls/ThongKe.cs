@@ -10,10 +10,10 @@ namespace ShoeStore.Controls
 {
     class ThongKe
     {
-        Status status = new Status();
-        Database database = new Database();
-        DataTable dt = new DataTable();
-        string str;
+        private Status status = new Status();
+        private Database database = new Database();
+        private DataTable dt = new DataTable();
+        private string str;
         public ThongKe()
         {
             LoadThonKeTongDoanThu();

@@ -10,12 +10,13 @@ namespace ShoeStore.Controls
 {
     class HoaDon
     {
-        Status status = new Status();
-        Database database = new Database();
-        DataTable hoaDon_tb;
-        string str;
+        private Status status = new Status();
+        private Database database = new Database();
+        private DataTable hoaDon_tb;
+        private string str;
 
         public DataTable HoaDon_tb { get => hoaDon_tb; }
+
         public HoaDon()
         {
             LoadDanhSach();

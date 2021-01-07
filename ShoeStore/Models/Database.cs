@@ -13,12 +13,18 @@ namespace ShoeStore.Models
     class Database
     {
         private string svrName = "DESKTOP-GNULQ63";
+        /// <summary>
+        /// Tên database
+        /// </summary>
         private string dbName = "ShoeStore";
         private string usrName = "ShoeStore";
         private string pwd = "ShoeStore";
         private bool intergratedMode = false;
 
         SqlConnection sqlconn;
+        /// <summary>
+        /// Constructor tạo đối tượng database
+        /// </summary>
         public Database()
         {
             //string connStr = "server=" + this.svrName + "; uid=" + this.usrName + "; pwd=" + this.pwd + " ;database=" + this.dbName;
@@ -48,12 +54,12 @@ namespace ShoeStore.Models
             sqlcom.ExecuteNonQuery();
             sqlconn.Close();
         }
-        public void ExecuteNonQueryAdapter(DataTable dt, string strQuery)
-        {
-            SqlDataAdapter da = new SqlDataAdapter(strQuery, sqlconn);
-            SqlCommandBuilder builder = new SqlCommandBuilder(da);
-            da.UpdateCommand = builder.GetUpdateCommand();
-            da.Update(dt);
-        }
+        //public void ExecuteNonQueryAdapter(DataTable dt, string strQuery)
+        //{
+        //    SqlDataAdapter da = new SqlDataAdapter(strQuery, sqlconn);
+        //    SqlCommandBuilder builder = new SqlCommandBuilder(da);
+        //    da.UpdateCommand = builder.GetUpdateCommand();
+        //    da.Update(dt);
+        //}
     }
 }

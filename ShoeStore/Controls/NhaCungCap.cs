@@ -10,10 +10,10 @@ namespace ShoeStore.Controls
 {
     class NhaCungCap
     {
-        Status status = new Status();
-        Database database = new Database();
-        DataTable nhaCungCap_tb;
-        string str;
+        private Status status = new Status();
+        private Database database = new Database();
+        private DataTable nhaCungCap_tb;
+        private string str;
         public DataTable NhaCungCap_tb { get => nhaCungCap_tb; }
         public NhaCungCap()
         {
