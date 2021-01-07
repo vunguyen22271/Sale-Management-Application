@@ -20,11 +20,25 @@ namespace ShoeStore.Views
         {
             InitializeComponent();
             //LoadListViewThongKeTongDoanhThu();
-            LoadTop5();
+            LoadTop5(); 
+            LoadListView();
         }
         public void LoadTop5()
         {
             khachhang.LoadTop5();
+            string ten;
+            string tongTien;
+            DataTable dt = khachhang.KhachHang_tb;
+
+            for (int i = 0; i < 5; i++)
+            {
+                ten = dt.Rows[i]["tenKH"].ToString();
+                tongTien = dt.Rows[i]["tongTien"].ToString();
+                chart1.Series["Tổng số tiền"].Points.AddXY(ten, tongTien);
+            }
+        }
+        public void LoadListView()
+        {
             lv.View = View.Details;
             lv.FullRowSelect = true;
             lv.Items.Clear();
@@ -32,20 +46,15 @@ namespace ShoeStore.Views
 
             string str;
             DataTable dt = khachhang.KhachHang_tb;
-
-            for (int i = 0; i < dt.Rows.Count; i++)
+            for (int i = 0; i < 5; i++)
             {
                 ListViewItem lvi;
                 lvi = lv.Items.Add((i + 1).ToString());
-                str = DateTime.Parse(dt.Rows[i]["ngayInHoaDon"].ToString()).ToString("dd/MM/yyyy");
+                str = dt.Rows[i]["tenKH"].ToString();
                 lvi.SubItems.Add(str);
-
-
-                str = dt.Rows[i]["TongSoLuong"].ToString();
+                str = dt.Rows[i]["sdt"].ToString();
                 lvi.SubItems.Add(str);
-
-
-                str = dt.Rows[i]["TongThanhTien"].ToString();
+                str = dt.Rows[i]["tongTien"].ToString();
                 lvi.SubItems.Add(str);
             }
         }
