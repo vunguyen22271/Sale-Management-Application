@@ -20,6 +20,7 @@ namespace ShoeStore.Views
         {
             InitializeComponent();
             this.idNhapKho = idNhapKho;
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void frmChiTietNhapKho_Load(object sender, EventArgs e)
@@ -88,15 +89,45 @@ namespace ShoeStore.Views
         {
             
         }
+        public static bool IsPositiveNumber(string number)
+        {
+            if (IsNumber(number) == false)
+            {
+                return false;
+            }
 
+            int num = int.Parse(number);
+            if (num > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static bool IsNumber(string number)
+        {
+            try
+            {
+                int sdt = int.Parse(number);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
         private void btnThemChiTietNhapKho_Click_1(object sender, EventArgs e)
         {
             string idGiay = (cbTenGiay.SelectedItem as ComboboxItem).Value.ToString();
             string soluong = txtSoLuong.Text;
             string giaGoc = txtGiaGoc.Text;
 
-            if (idGiay != "" || giaGoc != "" || soluong != "")
+            if (idGiay != "" && giaGoc != "" && soluong != "")
             {
+                if (IsPositiveNumber(giaGoc) == false || IsPositiveNumber(soluong) == false)
+                {
+                    MessageBox.Show("Giá gốc và số lượng chỉ chứa giá trị dương lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 if (chiTietNhapKho.Them(idGiay, soluong, giaGoc) == status.Success)
                 {
                     MessageBox.Show("Chi tiết phiếu nhập đã được thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -106,6 +137,10 @@ namespace ShoeStore.Views
                 {
                     MessageBox.Show("Chi tiết phiếu nhập bị trùng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

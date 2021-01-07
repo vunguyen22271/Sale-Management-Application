@@ -23,6 +23,7 @@ namespace ShoeStore.Views
         {
             InitializeComponent();
             this.idHoaDon = idHoaDon;
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void frmChiTietHoaDon_Load(object sender, EventArgs e)

@@ -33,6 +33,10 @@ namespace ShoeStore.Views
             LoadCBTenGiay(sender, e);
             LoadListView();
             lblIdHoaDon.Text = this.idHoaDon;
+            if(user.PhanQuyen == "0")
+            {
+                btnDangXuat.Hide();
+            }
         }
         private void LoadCBTenGiay(object sender, EventArgs e)
         {
@@ -123,8 +127,13 @@ namespace ShoeStore.Views
             {
                 string ten = txtTenKH.Text.Trim();
                 string sdt = txtSdtKH.Text.Trim();
-                if (ten != "" || sdt != "")
+                if (ten != "" && sdt != "")
                 {
+                    if (IsPhoneNumber(sdt) == false || sdt.Length < 10)
+                    {
+                        MessageBox.Show("Số điện thoại không được chứa ký tự đặc biệt và độ dài từ 10 số trở lên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                     this.idKH = khachHang.TimIDKhachHang(sdt);
                     if (this.idKH == status.Nonexistence)
                     {
@@ -133,7 +142,7 @@ namespace ShoeStore.Views
                         //Select idKH
                         this.idKH = khachHang.TimIDKhachHang(sdt);
                     }
-
+                    txtTenKH.Text = khachHang.KhachHang_tb.Rows[0]["tenKH"].ToString();
                     //Tạo phiếu hoá đơn
                     string ngayNhapKho = (DateTime.Now).ToString("MM/dd/yyyy");
                     this.idHoaDon = hoaDon.ThemHoaDon(user.IdUser, idKH, ngayNhapKho);
@@ -171,8 +180,13 @@ namespace ShoeStore.Views
                 string soluong = txtSoLuong.Text;
                 string giaBan = lblGiaBan.Text;
 
-                if (idGiay != "" || giaBan != "" || soluong != "")
+                if (idGiay != "" && giaBan != "" && soluong != "")
                 {
+                    if (IsPositiveNumber(giaBan) == false || IsPositiveNumber(soluong) == false)
+                    {
+                        MessageBox.Show("Giá bán và số lượng chỉ chứa giá trị dương lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                     if (chiTietHoaDon.ThemChiTiet(this.idHoaDon, idGiay, giaBan, soluong) == status.Success)
                     {
                         MessageBox.Show("Giày đã được thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -191,44 +205,62 @@ namespace ShoeStore.Views
                         MessageBox.Show("Giày bị trùng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
-            }
-        }
-
-        private void btnXoaChiTietHD_Click(object sender, EventArgs e)
-        {
-            if (kiemTraTaoPhieuHoaDon() == status.Exist)
-            {
-                if (lv.SelectedIndices.Count > 0)
-                {
-                    string str = "";
-                    str = lv.Items[lv.SelectedIndices[0]].SubItems[1].Text;
-                    if (MessageBox.Show("Bạn có chắc chắn là muốn xóa  giày ’" + str + "’ không ?", "Hỏi lại", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        int deleteIndex = lv.SelectedIndices[0];
-                        if (chiTietHoaDon.XoaChiTiet(this.idHoaDon, deleteIndex) == status.Success)
-                        {
-                            LoadListView();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Xoá không thành công", "Lỗi",
-                               MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-                    }
-                }
                 else
                 {
-                    MessageBox.Show("Bạn phải chọn 1 nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
         }
+        public static bool IsPositiveNumber(string number)
+        {
+            if (IsNumber(number) == false)
+            {
+                return false;
+            }
 
+            int num = int.Parse(number);
+            if (num > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static bool IsNumber(string number)
+        {
+            try
+            {
+                int sdt = int.Parse(number);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public static bool IsPhoneNumber(string number)
+        {
+            try
+            {
+                int sdt = int.Parse(number);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             if (kiemTraTaoPhieuHoaDon() == status.Exist)
             {
+                if(lv.Items.Count <= 0)
+                {
+                    MessageBox.Show("Hoá đơn chưa có bất cứ chi tiết nào để thanh toán", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
                 //Transaction thanh toán đã được xử lý bởi trigger
-                
+
                 MessageBox.Show("Phiếu hoá đơn đã được thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //Sau khi thanh toán, set idHoaDon về 0
                 this.idHoaDon = "0";
@@ -293,6 +325,43 @@ namespace ShoeStore.Views
             foundRows = giay.Giay_tb.Select("idGiay='" + idGiay + "'");
             lblSoLuongTrongKho.Text = "/" + foundRows[0]["soLuongGiay"].ToString();
             lblGiaBan.Text = foundRows[0]["giaBan"].ToString();
+        }
+
+
+        private void btnXoaChiTietHD_Click(object sender, EventArgs e)
+        {
+            if (kiemTraTaoPhieuHoaDon() == status.Exist)
+            {
+                if (lv.SelectedIndices.Count > 0)
+                {
+                    string str = "";
+                    str = lv.Items[lv.SelectedIndices[0]].SubItems[1].Text;
+                    if (MessageBox.Show("Bạn có chắc chắn là muốn xóa  giày ’" + str + "’ không ?", "Hỏi lại", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        int deleteIndex = lv.SelectedIndices[0];
+                        if (chiTietHoaDon.XoaChiTiet(this.idHoaDon, deleteIndex) == status.Success)
+                        {
+                            LoadListView();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xoá không thành công", "Lỗi",
+                               MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Bạn phải chọn 1 nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            frmDangNhap form = new frmDangNhap();
+            form.Show();
+            this.Hide();
         }
     }
 }

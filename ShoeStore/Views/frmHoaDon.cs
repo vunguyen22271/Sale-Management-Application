@@ -77,6 +77,11 @@ namespace ShoeStore.Views
                 frmChiTietHoaDon formChiTietHoaDon = new frmChiTietHoaDon(idHoaDon);
                 formChiTietHoaDon.ShowDialog();
             }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn 1 hoá đơn trước", "Lỗi",
+                   MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

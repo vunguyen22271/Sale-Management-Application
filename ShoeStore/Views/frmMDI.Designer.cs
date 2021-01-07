@@ -49,6 +49,7 @@
             this.btnDanhMuc = new System.Windows.Forms.Button();
             this.tabMain = new System.Windows.Forms.TabControl();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.btnDangXuat = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -60,6 +61,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.Teal;
+            this.panelMenu.Controls.Add(this.btnDangXuat);
             this.panelMenu.Controls.Add(this.groupBox4);
             this.panelMenu.Controls.Add(this.groupBox3);
             this.panelMenu.Controls.Add(this.groupBox2);
@@ -270,6 +272,18 @@
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnDangXuat.ForeColor = System.Drawing.Color.Black;
+            this.btnDangXuat.Location = new System.Drawing.Point(12, 502);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(169, 37);
+            this.btnDangXuat.TabIndex = 8;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.UseVisualStyleBackColor = false;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
+            // 
             // frmMDI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,6 +329,7 @@
         private System.Windows.Forms.Button btnHangGiay;
         private System.Windows.Forms.TabControl tabMain;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.Button btnDangXuat;
     }
 }
 

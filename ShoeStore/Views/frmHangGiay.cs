@@ -114,6 +114,11 @@ namespace ShoeStore.Views
                             MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Lỗi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
             else
             {

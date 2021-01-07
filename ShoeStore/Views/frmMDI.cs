@@ -30,6 +30,7 @@ namespace ShoeStore.Views
         {
             InitializeComponent();
             this.user = user;
+            this.WindowState = FormWindowState.Maximized;
         }
 
         #region Xử lý điều hướng MDI Child
@@ -213,6 +214,13 @@ namespace ShoeStore.Views
             {
                 this.formHoaDon.Select();
             }
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            frmDangNhap form = new frmDangNhap();
+            form.Show();
+            this.Hide();
         }
     }
 }

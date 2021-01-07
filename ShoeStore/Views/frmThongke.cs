@@ -15,10 +15,39 @@ namespace ShoeStore.Views
     {
         Status status = new Status();
         ThongKe thongke = new ThongKe();
+        KhachHang khachhang = new KhachHang();
         public frmThongke()
         {
             InitializeComponent();
-            LoadListViewThongKeTongDoanhThu();
+            //LoadListViewThongKeTongDoanhThu();
+            LoadTop5();
+        }
+        public void LoadTop5()
+        {
+            khachhang.LoadTop5();
+            lv.View = View.Details;
+            lv.FullRowSelect = true;
+            lv.Items.Clear();
+            lv.Columns[1].Width = 133;
+
+            string str;
+            DataTable dt = khachhang.KhachHang_tb;
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                ListViewItem lvi;
+                lvi = lv.Items.Add((i + 1).ToString());
+                str = DateTime.Parse(dt.Rows[i]["ngayInHoaDon"].ToString()).ToString("dd/MM/yyyy");
+                lvi.SubItems.Add(str);
+
+
+                str = dt.Rows[i]["TongSoLuong"].ToString();
+                lvi.SubItems.Add(str);
+
+
+                str = dt.Rows[i]["TongThanhTien"].ToString();
+                lvi.SubItems.Add(str);
+            }
         }
         public void LoadListViewThongKeTongDoanhThu()
         {

@@ -58,8 +58,13 @@ namespace ShoeStore.Views
         {
             string ten = txtTen.Text.Trim();
             string sdt = txtSdt.Text.Trim();
-            if (ten != "" || sdt != "")
+            if (ten != "" && sdt != "")
             {
+                if (IsPhoneNumber(sdt) == false || sdt.Length < 10)
+                {
+                    MessageBox.Show("Số điện thoại không được chứa ký tự đặc biệt và độ dài từ 10 số trở lên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 if (khachhang.Them(ten, sdt) == status.Success)
                 {
                     MessageBox.Show("Khách khàng đã được thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -76,7 +81,18 @@ namespace ShoeStore.Views
                 MessageBox.Show("Bạn chưa nhập tên Khách khàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
+        public static bool IsPhoneNumber(string number)
+        {
+            try
+            {
+                int sdt = int.Parse(number);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             if (lv.SelectedIndices.Count > 0)
@@ -85,6 +101,11 @@ namespace ShoeStore.Views
                 string sdt = txtSdt.Text.Trim();
                 if (ten != "" || sdt != "")
                 {
+                    if (IsPhoneNumber(sdt) == false || sdt.Length < 10)
+                    {
+                        MessageBox.Show("Số điện thoại không được chứa ký tự đặc biệt và độ dài từ 10 số trở lên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                     if (khachhang.CapNhat(lv.SelectedIndices[0], ten, sdt) == status.Success)
                     {
                         MessageBox.Show("Khách hàng đã được cập nhật thành công", "Thông báo",

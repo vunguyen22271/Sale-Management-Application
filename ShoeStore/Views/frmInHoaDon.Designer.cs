@@ -52,7 +52,6 @@
             this.lblNgayNhap = new System.Windows.Forms.Label();
             this.lblSoLuongTrongKho = new System.Windows.Forms.Label();
             this.lblGiaBan = new System.Windows.Forms.Label();
-            this.btnXoaChiTietHD = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnLayidKhachHang = new System.Windows.Forms.Button();
             this.txtTenKH = new System.Windows.Forms.TextBox();
@@ -64,6 +63,8 @@
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnXoaChiTietHD = new System.Windows.Forms.Button();
+            this.btnDangXuat = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBoxThongTinBoPhan.SuspendLayout();
             this.groupBoxThongTinChiTiet.SuspendLayout();
@@ -71,6 +72,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnDangXuat);
             this.groupBox1.Controls.Add(this.lblTongSoLuong);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.lblTongThanhTien);
@@ -207,13 +209,13 @@
             // 
             // groupBoxThongTinChiTiet
             // 
+            this.groupBoxThongTinChiTiet.Controls.Add(this.btnXoaChiTietHD);
             this.groupBoxThongTinChiTiet.Controls.Add(this.label8);
             this.groupBoxThongTinChiTiet.Controls.Add(this.lblIdHoaDon);
             this.groupBoxThongTinChiTiet.Controls.Add(this.label6);
             this.groupBoxThongTinChiTiet.Controls.Add(this.lblNgayNhap);
             this.groupBoxThongTinChiTiet.Controls.Add(this.lblSoLuongTrongKho);
             this.groupBoxThongTinChiTiet.Controls.Add(this.lblGiaBan);
-            this.groupBoxThongTinChiTiet.Controls.Add(this.btnXoaChiTietHD);
             this.groupBoxThongTinChiTiet.Controls.Add(this.btnThem);
             this.groupBoxThongTinChiTiet.Controls.Add(this.btnLayidKhachHang);
             this.groupBoxThongTinChiTiet.Controls.Add(this.txtTenKH);
@@ -282,16 +284,6 @@
             this.lblGiaBan.Name = "lblGiaBan";
             this.lblGiaBan.Size = new System.Drawing.Size(0, 13);
             this.lblGiaBan.TabIndex = 20;
-            // 
-            // btnXoaChiTietHD
-            // 
-            this.btnXoaChiTietHD.Location = new System.Drawing.Point(448, 186);
-            this.btnXoaChiTietHD.Name = "btnXoaChiTietHD";
-            this.btnXoaChiTietHD.Size = new System.Drawing.Size(80, 40);
-            this.btnXoaChiTietHD.TabIndex = 19;
-            this.btnXoaChiTietHD.Text = "Xoá giày";
-            this.btnXoaChiTietHD.UseVisualStyleBackColor = true;
-            this.btnXoaChiTietHD.Click += new System.EventHandler(this.btnXoaChiTietHD_Click);
             // 
             // btnThem
             // 
@@ -389,6 +381,26 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Tên giày";
             // 
+            // btnXoaChiTietHD
+            // 
+            this.btnXoaChiTietHD.Location = new System.Drawing.Point(406, 186);
+            this.btnXoaChiTietHD.Name = "btnXoaChiTietHD";
+            this.btnXoaChiTietHD.Size = new System.Drawing.Size(80, 40);
+            this.btnXoaChiTietHD.TabIndex = 27;
+            this.btnXoaChiTietHD.Text = "Xoá giày";
+            this.btnXoaChiTietHD.UseVisualStyleBackColor = true;
+            this.btnXoaChiTietHD.Click += new System.EventHandler(this.btnXoaChiTietHD_Click);
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Location = new System.Drawing.Point(18, 10);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(80, 40);
+            this.btnDangXuat.TabIndex = 28;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.UseVisualStyleBackColor = true;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
+            // 
             // frmInHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,7 +449,6 @@
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Label lblSoLuongTrongKho;
         private System.Windows.Forms.Label lblGiaBan;
-        private System.Windows.Forms.Button btnXoaChiTietHD;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label lblTongSoLuong;
         private System.Windows.Forms.Label label9;
@@ -448,5 +459,7 @@
         private System.Windows.Forms.Label lblNgayNhap;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblIdHoaDon;
+        private System.Windows.Forms.Button btnXoaChiTietHD;
+        private System.Windows.Forms.Button btnDangXuat;
     }
 }

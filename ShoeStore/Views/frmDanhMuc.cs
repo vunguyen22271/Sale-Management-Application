@@ -124,7 +124,7 @@ namespace ShoeStore.Views
             {
                 string ten = txtTen.Text.Trim();
                 string idHangGiay = (cbHangGiay.SelectedItem as ComboboxItem).Value.ToString();
-                if (ten != "" || idHangGiay != "")
+                if (ten != "" && idHangGiay != "")
                 {
                     if (danhmuc.CapNhat(lv.SelectedIndices[0], ten, int.Parse(idHangGiay)) == status.Success)
                     {
@@ -138,6 +138,11 @@ namespace ShoeStore.Views
                         MessageBox.Show("Danh mục bị trùng", "Lỗi",
                             MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Lỗi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             else
@@ -177,9 +182,17 @@ namespace ShoeStore.Views
 
         private void btnChiTiet_Click(object sender, EventArgs e)
         {
-            string idLoaiGiay = danhmuc.DanhMuc_tb.Rows[lv.SelectedIndices[0]]["idLoaiGiay"].ToString();
-            frmGiay formGiay = new frmGiay(idLoaiGiay);
-            formGiay.ShowDialog();
+            if (lv.SelectedIndices.Count > 0)
+            {
+                string idLoaiGiay = danhmuc.DanhMuc_tb.Rows[lv.SelectedIndices[0]]["idLoaiGiay"].ToString();
+                frmGiay formGiay = new frmGiay(idLoaiGiay);
+                formGiay.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn 1 loại giày trước", "Lỗi",
+                   MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)

@@ -68,16 +68,22 @@ namespace ShoeStore.Controls
         {
             string idGiay = giay_tb.Rows[index]["idGiay"].ToString();
             string str = "update GIAY set giaBan = '"+giaban+"' where status = 1 and idGiay = " + idGiay;
-            database.ExecuteNonQuery(str);
-            LoadDanhSach(idLoaiGiay);
-            return status.Success;
+            if (database.ExecuteNonQuery(str))
+            {
+                LoadDanhSach(idLoaiGiay);
+                return status.Success;
+            }
+            return status.Failure;
         }
         public string Them(string idLoaiGiayThem, string mauSac, string size, string giaban)
         {
             string str = "insert into GIAY(idLoaiGiay, mauSac, size, giaBan) values('" + idLoaiGiayThem + "', N'" + mauSac + "', '" + size + "', '" + giaban + "')";
-            database.ExecuteNonQuery(str);
-            LoadDanhSach(idLoaiGiay);
-            return status.Success;
+            if (database.ExecuteNonQuery(str))
+            {
+                LoadDanhSach(idLoaiGiay);
+                return status.Success;
+            }
+            return status.Failure;
         }
     }
 }

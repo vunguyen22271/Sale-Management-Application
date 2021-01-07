@@ -121,6 +121,11 @@ namespace ShoeStore.Views
                 frmChiTietNhapKho formChiTietNhapKho = new frmChiTietNhapKho(idNhapKho);
                 formChiTietNhapKho.ShowDialog();
             }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn 1 phiếu nhập kho trước", "Lỗi",
+                   MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
     }
 }

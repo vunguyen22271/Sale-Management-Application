@@ -30,6 +30,8 @@ namespace ShoeStore.Views
             giay = new Giay(this.idLoaiGiay);
             LoadCBTenGiay();
             LoadListView();
+            cbMauSac.SelectedIndex = 0;
+            cbSize.SelectedIndex = 0;
         }
         public void LoadListView()
         {
@@ -111,6 +113,11 @@ namespace ShoeStore.Views
             string giaban = txtGiaBan.Text.Trim();
             if (giaban != "")
             {
+                if (IsPositiveNumber(giaban) == false)
+                {
+                    MessageBox.Show("Giá bán chỉ chứa giá trị số dương lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 if (giay.CapNhat(lv.SelectedIndices[0], giaban) == status.Success)
                 {
                     MessageBox.Show("Giày đã được cập nhật thành công", "Thông báo",
@@ -132,7 +139,12 @@ namespace ShoeStore.Views
             string mausac = cbMauSac.SelectedItem.ToString();
             string size = cbSize.SelectedItem.ToString();
             string giaban = txtGiaBan.Text.Trim();
-            if(giaban == "") { giaban = "0"; }
+            //if(giaban == "") { giaban = "0"; }
+            if (IsPositiveNumber(giaban) == false)
+            {
+                MessageBox.Show("Giá bán chỉ chứa giá trị dương lớn hơn 0", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (giay.Them(idLoaiGiay, mausac, size, giaban) == status.Success)
             {
                 MessageBox.Show("Giày đã được thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -143,7 +155,32 @@ namespace ShoeStore.Views
                 MessageBox.Show("Giày bị trùng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+        public static bool IsPositiveNumber(string number)
+        {
+            if (IsNumber(number) == false)
+            {
+                return false;
+            }
 
+            int num = int.Parse(number);
+            if(num > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public static bool IsNumber(string number)
+        {
+            try
+            {
+                int sdt = int.Parse(number);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
         private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

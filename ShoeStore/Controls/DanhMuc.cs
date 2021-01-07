@@ -39,16 +39,22 @@ namespace ShoeStore.Controls
         public string Them(string ten, string idHangGiay)
         {
             string str = "insert into LOAIGIAY(tenLoaiGiay, idHangGiay) values(N'" + ten + "', '"+idHangGiay+"')";
-            database.ExecuteNonQuery(str);
-            LoadDanhSach();
-            return status.Success;
+            if (database.ExecuteNonQuery(str))
+            {
+                LoadDanhSach();
+                return status.Success;
+            }
+            return status.Failure;
         }
         public string CapNhat(int index, string ten, int idHangGiay)
         {
             string str = "update LOAIGIAY set tenLoaiGiay = N'" + ten + "', idHangGiay='"+ idHangGiay + "' where status = 1 and idLoaiGiay = " + danhMuc_tb.Rows[index]["idLoaiGiay"].ToString();
-            database.ExecuteNonQuery(str);
-            LoadDanhSach();
-            return status.Success;
+            if (database.ExecuteNonQuery(str))
+            {
+                LoadDanhSach();
+                return status.Success;
+            }
+            return status.Failure;
         }
         public string Xoa(int index)
         {

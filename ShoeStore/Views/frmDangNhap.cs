@@ -21,13 +21,16 @@ namespace ShoeStore.Views
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            txtUser.Text = "admin01";
-            txtPass.Text = "admin01";
-            if (txtUser.Text != "" && txtPass.Text != "")
+            user.Username = txtUser.Text.Trim();
+            user.Password = txtPass.Text.Trim();
+            if (user.Username != "" && user.Password != "")
             {
-                user.Username = txtUser.Text.Trim();
-                user.Password = txtPass.Text.Trim();
-                if(user.Login() == true)
+                if (user.Username.Length <= 3 || user.Password.Length <= 3)
+                {
+                    MessageBox.Show("Độ dài username, password phải từ 4 ký tự trở lên");
+                    return;
+                }
+                if (user.Login() == true)
                 {
                     if(user.PhanQuyen == "0") //admin
                     {
@@ -45,7 +48,7 @@ namespace ShoeStore.Views
                 }
                 else
                 {
-                    MessageBox.Show("Sai tai khoan hoac mat khau");
+                    MessageBox.Show("Sai tài khoản hoặc mật khẩu");
                 }
             }
             else

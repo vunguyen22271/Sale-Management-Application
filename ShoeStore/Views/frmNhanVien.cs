@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,6 +25,7 @@ namespace ShoeStore.Views
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
             LoadListView();
+            cbPhanQuyen.SelectedIndex = 1;
         }
         public void LoadListView()
         {
@@ -72,8 +74,23 @@ namespace ShoeStore.Views
             string sdt = txtSdt.Text.Trim();
             string email = txtEmail.Text.Trim();
             string phanquyen = cbPhanQuyen.SelectedItem.ToString();
-            if (ten != "" || sdt != "" || email != "" || phanquyen != "" || username != "" || pass != "" || pass == repass)
+            if (ten != "" && sdt != "" && email != "" && phanquyen != "" && username != "" && pass != "" && pass == repass)
             {
+                if (IsPhoneNumber(sdt) == false || sdt.Length < 10)
+                {
+                    MessageBox.Show("Số điện thoại không được chứa ký tự đặc biệt và độ dài từ 10 số trở lên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (IsValid(email) == false)
+                {
+                    MessageBox.Show("Email không hợp lệ, vui lòng nhập email không có ký tự đặc biệt trừ @", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (pass != repass || pass.Length < 4 || repass.Length < 4)
+                {
+                    MessageBox.Show("Vui lòng nhập lại password và repassword có độ dài từ 4 trở lên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 if (nhanvien.Them(ten, username, pass, sdt, email, phanquyen) == status.Success)
                 {
                     MessageBox.Show("Nhân viên đã được thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -87,10 +104,33 @@ namespace ShoeStore.Views
             }
             else
             {
-                MessageBox.Show("Bạn chưa nhập tên Nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
+        public static bool IsPhoneNumber(string number)
+        {
+            try
+            {
+                int sdt = int.Parse(number);
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+        public bool IsValid(string emailaddress)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(emailaddress);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             if (lv.SelectedIndices.Count > 0)
@@ -102,8 +142,23 @@ namespace ShoeStore.Views
                 string sdt = txtSdt.Text.Trim();
                 string email = txtEmail.Text.Trim();
                 string phanquyen = cbPhanQuyen.SelectedItem.ToString();
-                if (ten != "" || sdt != "" || email != "" || phanquyen != "" || username != "" || pass != "" || pass == repass)
+                if (ten != "" && sdt != "" && email != "" && phanquyen != "" && username != "" && pass != "" && pass == repass)
                 {
+                    if (IsPhoneNumber(sdt) == false || sdt.Length < 10)
+                    {
+                        MessageBox.Show("Số điện thoại không được chứa ký tự đặc biệt và độ dài từ 10 số trở lên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (IsValid(email) == false)
+                    {
+                        MessageBox.Show("Email không hợp lệ, vui lòng nhập email không có ký tự đặc biệt trừ @", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (pass != repass || pass.Length < 4 || repass.Length < 4)
+                    {
+                        MessageBox.Show("Vui lòng nhập lại password và repassword có độ dài từ 4 trở lên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                     if (nhanvien.CapNhat(lv.SelectedIndices[0], ten, username, pass, sdt, email, phanquyen) == status.Success)
                     {
                         MessageBox.Show("Nhân viên đã được cập nhật thành công", "Thông báo",
@@ -116,6 +171,11 @@ namespace ShoeStore.Views
                         MessageBox.Show("Nhân viên bị trùng", "Lỗi",
                             MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Lỗi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             else

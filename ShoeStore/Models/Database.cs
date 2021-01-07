@@ -47,12 +47,21 @@ namespace ShoeStore.Models
             da.Fill(ds);
             return ds.Tables[0];
         }
-        public void ExecuteNonQuery(string strquery)
+        public bool ExecuteNonQuery(string strquery)
         {
             SqlCommand sqlcom = new SqlCommand(strquery, sqlconn);
             sqlconn.Open();
-            sqlcom.ExecuteNonQuery();
+            try
+            {
+                sqlcom.ExecuteNonQuery();
+            }
+            catch(Exception e)
+            {
+                sqlconn.Close();
+                return false;
+            }
             sqlconn.Close();
+            return true;
         }
         //public void ExecuteNonQueryAdapter(DataTable dt, string strQuery)
         //{
