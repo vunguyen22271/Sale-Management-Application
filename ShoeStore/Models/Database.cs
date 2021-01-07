@@ -12,15 +12,30 @@ namespace ShoeStore.Models
 {
     class Database
     {
+        /// <summary>
+        /// Tên server
+        /// </summary>
         private string svrName = "DESKTOP-GNULQ63";
         /// <summary>
         /// Tên database
         /// </summary>
         private string dbName = "ShoeStore";
+        /// <summary>
+        /// Username đăng nhập server
+        /// </summary>
         private string usrName = "ShoeStore";
+        /// <summary>
+        /// Password đăng nhập server
+        /// </summary>
         private string pwd = "ShoeStore";
+        /// <summary>
+        /// 1: Cho phép truy cập bằng Windows, 0: Truy cập bằng SQL Login
+        /// </summary>
         private bool intergratedMode = false;
 
+        /// <summary>
+        /// Đối tượng connection chịu trách nhiệm thiết lập kết nối đến database
+        /// </summary>
         SqlConnection sqlconn;
         /// <summary>
         /// Constructor tạo đối tượng database
@@ -40,6 +55,9 @@ namespace ShoeStore.Models
             }
             sqlconn = new SqlConnection(connStr);
         }
+        /// <summary>
+        /// Thực thi và trả ra kết quả (Select)
+        /// </summary>
         public DataTable Execute(string strQuery)
         {
             SqlDataAdapter da = new SqlDataAdapter(strQuery, sqlconn);
@@ -47,6 +65,9 @@ namespace ShoeStore.Models
             da.Fill(ds);
             return ds.Tables[0];
         }
+        /// <summary>
+        /// Thực thi và không cần trả ra kết quả (Update)
+        /// </summary>
         public bool ExecuteNonQuery(string strquery)
         {
             SqlCommand sqlcom = new SqlCommand(strquery, sqlconn);
@@ -55,7 +76,7 @@ namespace ShoeStore.Models
             {
                 sqlcom.ExecuteNonQuery();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 sqlconn.Close();
                 return false;
